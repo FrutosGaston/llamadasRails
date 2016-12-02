@@ -1,0 +1,16 @@
+<h1>Crear llamada</h1>
+<%= form_for :call, url: calls_path do |f| %>
+    <p>
+      <%= f.label :desde %><br>
+      <%= f.text_field :desde %>
+    </p>
+
+    <p>
+      <%= f.label :hasta %><br>
+      <%= f.collection_select :hasta %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

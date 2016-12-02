@@ -1,0 +1,16 @@
+<h1>Crear ubicacion</h1>
+<%= form_for :location, url: locations_path do |f| %>
+    <p>
+      <%= f.label :pais %><br>
+      <%= f.text_field :pais %>
+    </p>
+
+    <p>
+      <%= f.label :ciudad %><br>
+      <%= f.text_field :ciudad %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
