@@ -1,0 +1,12 @@
+<h1>Crear facturador</h1>
+<%= form_for :biller, url: billers_path do |f| %>
+
+    <p>
+      <%= f.label :empresa_de_telefonia %><br>
+      <%= f.select(:empresa, [CostosDeLlamadaBasicos.new.tipos_de_costo]) %><br>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

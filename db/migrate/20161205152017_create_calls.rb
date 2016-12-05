@@ -2,8 +2,8 @@ class CreateCalls < ActiveRecord::Migration[5.0]
   def change
     create_table :calls do |t|
 
-      t.Location :origin
-      t.Location :destiny
+      t.string :origin
+      t.string :destiny
       t.datetime :when
       t.integer :last
 

@@ -1,0 +1,14 @@
+<h1>Facturadores</h1>
+
+<table>
+  <tr>
+    <th>Facturador</th>
+  </tr>
+
+  <% @billers.each do |biller| %>
+      <tr>
+        <td><%= 'Holi' %></td>
+        <td><%= link_to 'Show', call_path(location) %></td>
+      </tr>
+  <% end %>
+</table>

@@ -1,5 +1,3 @@
-require_relative '../src/llamada'
-
 class CostoDeLlamada
 
   def initialize(costo, condicion)

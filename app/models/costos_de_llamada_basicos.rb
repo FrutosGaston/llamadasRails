@@ -1,5 +1,3 @@
-require_relative '../src/costo_de_llamada'
-
 class CostosDeLlamadaBasicos
 
   attr_accessor :tipos_de_costo

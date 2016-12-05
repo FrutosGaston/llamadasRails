@@ -1,9 +1,8 @@
-require_relative '../src/llamada'
+class Biller < ApplicationRecord
 
-class FacturadorDeLlamadas
-
-  def initialize(tipos_de_llamada)
-    @tipos_de_llamada = tipos_de_llamada
+  def initialize(params)
+    super
+    write_attribute(:empresa, params[:empresa])
   end
 
   def factura_del_mes(llamadas)

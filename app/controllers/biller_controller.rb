@@ -1,2 +1,0 @@
-class BillerController < ApplicationController
-end
