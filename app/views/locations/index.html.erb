@@ -1,0 +1,16 @@
+<h1>Ubicaciones posibles</h1>
+
+<table>
+  <tr>
+    <th>Pais</th>
+    <th>Ciudad</th>
+  </tr>
+
+  <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.pais %></td>
+        <td><%= location.ciudad %></td>
+        <td><%= link_to 'Show', location_path(location) %></td>
+      </tr>
+  <% end %>
+</table>

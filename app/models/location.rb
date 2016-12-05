@@ -1,17 +1,14 @@
-class Location < ApplicationRecord
-
-  has_one :pais
-  has_one :ciudad
-
-  attr_accessor :ciudad
-  attr_accessor :pais
+class Location < ActiveRecord::Base
 
 
-  def initialize(pais, ciudad)
+  def initialize(params)
+    super
+    write_attribute(:pais, ISO3166::Country.new(params[:pais]))
+    write_attribute(:ciudad, params[:ciudad])
+  end
 
-    @pais = ISO3166::Country.new(pais)
-    @ciudad = ciudad
-
+  def pais_coma_ciudad
+    pais.to_s + " , " + ciudad.to_s
   end
 
   def es_mismo_pais?(ubicacion)

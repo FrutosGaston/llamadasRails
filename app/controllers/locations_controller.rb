@@ -2,10 +2,21 @@ class LocationsController < ApplicationController
   def new
   end
 
-  def create
-    @location = Location.new(args[:pais],args[:ciudad])
+  def index
+    @locations = Location.all
+  end
 
-    render plain: @location.pais
+  def show
+    @location = Location.find(params[:id])
+  end
+
+  def create
+    @location = Location.new(args)
+
+    @location.save
+    redirect_to @location
+
+    #render plain: @location.pais
   end
 
   def args
@@ -13,3 +24,4 @@ class LocationsController < ApplicationController
   end
 
 end
+
