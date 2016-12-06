@@ -19,7 +19,7 @@ class CallsController < ApplicationController
 
   private
   def args
-    params.require(:call).permit(:origin, :destiny, :when, :last)
+    params.require(:call).permit(:origin_id, :destination_id, :when, :last)
   end
 
 end

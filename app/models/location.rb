@@ -1,11 +1,6 @@
 class Location < ActiveRecord::Base
 
-
-  def initialize(params)
-    super
-    write_attribute(:pais, ISO3166::Country.new(params[:pais]))
-    write_attribute(:ciudad, params[:ciudad])
-  end
+  has_many :calls
 
   def pais_coma_ciudad
     pais.to_s + " , " + ciudad.to_s

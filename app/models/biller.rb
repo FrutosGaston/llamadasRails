@@ -1,5 +1,7 @@
 class Biller < ApplicationRecord
 
+  belongs_to :bills
+
   def initialize(params)
     super
     write_attribute(:empresa, params[:empresa])

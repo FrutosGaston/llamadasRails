@@ -2,22 +2,22 @@
 <%= form_for :call, url: calls_path do |f| %>
 
     <p>
-      <%= f.label :desde %><br>
-      <%= f.collection_select(:origin, Location.all, :pais_coma_ciudad, :pais_coma_ciudad , prompt: true) %><br>
+      <%= f.label :origin %><br>
+      <%= f.collection_select(:origin_id, Location.all, :id, :pais_coma_ciudad) %><br>
     </p>
 
     <p>
-      <%= f.label :hasta %><br>
-      <%= f.collection_select(:destiny, Location.all, :pais_coma_ciudad, :pais_coma_ciudad , prompt: true) %><br>
+      <%= f.label :destination %><br>
+      <%= f.collection_select(:destination_id, Location.all, :id, :pais_coma_ciudad) %><br>
     </p>
 
     <p>
-      <%= f.label :realizada %><br>
+      <%= f.label :when, 'Realizada el dia' %><br>
       <%= f.datetime_select :when %><br>
     </p>
 
     <p>
-      <%= f.label :de_duracion %><br>
+      <%= f.label :last, 'De duracion' %><br>
       <%= f.number_field :last %><br>
     </p>
 

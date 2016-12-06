@@ -15,8 +15,6 @@ class LocationsController < ApplicationController
 
     @location.save
     redirect_to @location
-
-    #render plain: @location.pais
   end
 
   def args

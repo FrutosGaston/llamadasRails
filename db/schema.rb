@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205195546) do
+ActiveRecord::Schema.define(version: 20161206150641) do
 
   create_table "billers", force: :cascade do |t|
     t.string   "empresa"
@@ -18,13 +18,27 @@ ActiveRecord::Schema.define(version: 20161205195546) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "calls", force: :cascade do |t|
-    t.string   "origin"
-    t.string   "destiny"
-    t.datetime "when"
-    t.integer  "last"
+  create_table "bills", force: :cascade do |t|
+    t.datetime "since"
+    t.datetime "until"
+    t.integer  "amount"
+    t.integer  "calls_id"
+    t.integer  "biller_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["biller_id"], name: "index_bills_on_biller_id"
+    t.index ["calls_id"], name: "index_bills_on_calls_id"
+  end
+
+  create_table "calls", force: :cascade do |t|
+    t.integer  "origin_id"
+    t.integer  "destination_id"
+    t.datetime "when"
+    t.integer  "last"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["destination_id"], name: "index_calls_on_destination_id"
+    t.index ["origin_id"], name: "index_calls_on_origin_id"
   end
 
   create_table "locations", force: :cascade do |t|

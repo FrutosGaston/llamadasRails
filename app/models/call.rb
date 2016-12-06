@@ -1,23 +1,16 @@
 class Call < ActiveRecord::Base
 
-  has_many :locations
-
-  def initialize(params)
-    super
-    write_attribute(:origin, params[:origin])
-    write_attribute(:destiny, params[:destiny])
-    write_attribute(:when, params[:when])
-    write_attribute(:last, params[:last])
-  end
+  belongs_to :origin, :class_name => 'Location', foreign_key: :origin_id
+  belongs_to :destination, :class_name => 'Location', foreign_key: :destination_id
+  has_many :bills
 
     def es_dia_de_semana?
       ! es_fin_de_semana?
     end
 
     def es_horario_laboral?
-      (@when.hour > 8) & (@when.hour < 20)
+      (:when.hour > 8) & (:when.hour < 20)
     end
-
     def es_fin_de_semana?
       @when.saturday? || @when.sunday?
     end
@@ -27,11 +20,11 @@ class Call < ActiveRecord::Base
     end
 
     def es_nacional?
-      @origin.es_mismo_pais?(@destiny)
+      @origin.es_mismo_pais?(:destination)
     end
 
     def es_local?
-      es_nacional? && @origin.es_misma_ciudad?(@destiny)
+      es_nacional? && :origin.es_misma_ciudad?(:destination)
     end
 
     def es_internacional?

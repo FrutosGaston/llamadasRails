@@ -2,7 +2,7 @@
 <%= form_for :biller, url: billers_path do |f| %>
 
     <p>
-      <%= f.label :empresa_de_telefonia %><br>
+      <%= f.label :empresa, 'Empresa de telefonia' %><br>
       <%= f.select(:empresa, [CostosDeLlamadaBasicos.new.tipos_de_costo]) %><br>
     </p>
 
