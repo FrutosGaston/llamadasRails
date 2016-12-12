@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :billers do
-    resources :bills
-  end
-
+  resources :bills
   resources :locations, :calls
 
   root 'welcome#index'

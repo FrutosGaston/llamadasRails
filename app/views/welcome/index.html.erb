@@ -1,1 +1,39 @@
-<h1>holis</h1>
+<h1>Pedir factura</h1>
+<%= form_for :bill, url: root_path do |f| %>
+    <p>
+      <%= f.label :since, 'Desde' %><br>
+      <%= f.datetime_select :since %>
+    </p>
+
+    <p>
+      <%= f.label :until, 'Hasta' %><br>
+      <%= f.datetime_select :till %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+
+<h2>Facturas</h2>
+<% @biller.bills.each do |bill| %>
+    <p>
+      <strong>Desde:</strong>
+      <%= bill.since %>
+    </p>
+
+    <p>
+      <strong>Hasta:</strong>
+      <%= bill.till %>
+    </p>
+
+    <p>
+      <strong>Monto:</strong>
+      <%= bill.total_amount %>
+    </p>
+
+    <p>
+      <strong>Detalles:</strong>
+      <%= bill.calls %>
+    </p>
+<% end %>

@@ -1,12 +1,11 @@
 class Bill < ApplicationRecord
-  belongs_to :biller
 
   def calls
-    Call.where(when: since..till)
+    Call.where(when_was: since..till)
   end
 
   def total_amount
-    biller.costo_total_llamadas(calls)
+    Biller.new(CostosDeLlamadaBasicos.new.tipos_de_costo).total_amount(calls)
   end
 
 end

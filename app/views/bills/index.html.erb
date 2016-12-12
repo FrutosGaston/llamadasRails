@@ -1,5 +1,5 @@
 <h1>Pedir factura</h1>
-<%= form_for :bill, url: billers_path([@biller, @biller.bills.build]) do |f| %>
+<%= form_for :bill, url: {action: 'create'} do |f| %>
     <p>
       <%= f.label :since, 'Desde' %><br>
       <%= f.datetime_select :since %>
@@ -16,7 +16,7 @@
 <% end %>
 
 <h2>Facturas</h2>
-<% @biller.bills.each do |bill| %>
+<% Bill.all.each do |bill| %>
     <p>
       <strong>Desde:</strong>
       <%= bill.since %>

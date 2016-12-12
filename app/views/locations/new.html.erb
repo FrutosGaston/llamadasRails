@@ -2,7 +2,7 @@
 <%= form_for :location, url: locations_path do |f| %>
     <p>
       <%= f.label :pais %><br>
-      <%= f.collection_select(:pais, ISO3166::Country.find_all_countries_by_region('Americas'), :name, :name) %><br>
+      <%= f.collection_select(:pais, ISO3166::Country.find_all_countries_by_region('Americas'), :alpha2, :name) %><br>
     </p>
 
     <p>

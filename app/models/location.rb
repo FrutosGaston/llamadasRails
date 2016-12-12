@@ -2,24 +2,28 @@ class Location < ActiveRecord::Base
 
   has_many :calls
 
+  def country
+    ISO3166::Country.new(pais)
+  end
+
   def pais_coma_ciudad
-    pais.to_s + " , " + ciudad.to_s
+    country.name + " , " + ciudad.to_s
   end
 
   def es_mismo_pais?(ubicacion)
-    @pais == ubicacion.pais
+    country == ubicacion.country
   end
 
   def es_misma_ciudad?(ubicacion)
-    @ciudad == ubicacion.ciudad
+    ciudad == (ubicacion.ciudad)
   end
 
   def es_pais?(pais)
-    @pais.equal?(pais)
+    country.equal?(pais)
   end
 
   def es_region?(region)
-    @pais.region.equal?(region)
+    country.subregion == region
   end
 
 end

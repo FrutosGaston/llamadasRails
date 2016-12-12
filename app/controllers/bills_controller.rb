@@ -1,10 +1,11 @@
 class BillsController < ApplicationController
 
   def create
-    @biller = Biller.find(params[:biller_id])
-    @bill = @biller.bills.create(args)
+    @bill = Bill.new(args)
 
-    redirect_to biller_path(@biller)
+    @bill.save!
+
+    redirect_to bills_path
   end
 
   private

@@ -14,8 +14,8 @@ describe do
   end
 
 
-  it 'The total cost in a national call of 5 minutes should be 1.5' do
-    expect(@costo_nacional.costo_total(@llamada)).to be 0.3*5
+  it 'The total cost in a national call of 2 minutes should be 0.6' do
+    expect(@costo_nacional.costo_total(@llamada)).to be 0.3*2
   end
 
 end
