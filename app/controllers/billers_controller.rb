@@ -19,7 +19,7 @@ class BillersController < ApplicationController
 
   private
   def args
-    params.require(:biller).permit(:empresa)
+    params.require(:biller).permit(:cost_types)
   end
 
 end

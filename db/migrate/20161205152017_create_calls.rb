@@ -4,7 +4,7 @@ class CreateCalls < ActiveRecord::Migration[5.0]
 
       t.references :origin
       t.references :destination
-      t.datetime :when
+      t.datetime :when_was
       t.integer :last
 
       t.timestamps

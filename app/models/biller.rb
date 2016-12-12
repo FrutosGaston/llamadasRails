@@ -1,28 +1,19 @@
 class Biller < ApplicationRecord
 
-  belongs_to :bills
+  has_many :bills
 
-  def initialize(params)
-    super
-    write_attribute(:empresa, params[:empresa])
+  def total_amount(llamadas)
+    llamadas.reduce(0) { |acumulador, llamada| acumulador += call_amount(llamada) }
   end
 
-  def factura_del_mes(llamadas)
-    10 + costo_total_llamadas(llamadas)
-  end
-
-  def costo_total_llamadas(llamadas)
-    llamadas.reduce(0) { |acumulador, llamada| acumulador += costo_llamada(llamada) }
-  end
-
-  def costo_llamada(llamada)
-    tipo_de_llamada(llamada).costo_total(llamada)
+  def call_amount(llamada)
+    call_type(llamada).costo_total(llamada)
   end
 
   private
 
-  def tipo_de_llamada(llamada)
-    @tipos_de_llamada.detect { |tipo| tipo.puede_hacerse_cargo(llamada)}
+  def call_type(llamada)
+    cost_types.detect { |tipo| tipo.puede_hacerse_cargo(llamada)}
   end
 
 end

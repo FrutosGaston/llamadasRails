@@ -1,10 +1,4 @@
-require 'spec_helper'
-require 'countries'
-require_relative '../src/llamada'
-require_relative '../src/costo_de_llamada'
-require_relative '../src/costos_de_llamada_basicos'
-
-
+require 'rails_helper'
 
 describe do
 

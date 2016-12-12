@@ -6,7 +6,7 @@ class CostoDeLlamada
   end
 
   def costo_total(llamada)
-    costo = costo_por_minuto * llamada.duracion
+    costo = costo_por_minuto * llamada.last
   end
 
   def costo_por_minuto()
