@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Llamadas</title>
-    <%= csrf_meta_tags %>
+<head>
+  Llamadas telefonicas
+</head>
+<body>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<div id="main-container" class="container">
+  <div class="row">
+    <div class="col-xs-3">
+    </div>
+    <div class="col-xs-9">
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
-  <body>
-    <%= yield %>
-  </body>
+</body>
 </html>

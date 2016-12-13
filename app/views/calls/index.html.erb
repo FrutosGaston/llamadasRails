@@ -1,6 +1,6 @@
 <h1>Llamadas</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Origen</th>
     <th>Destino</th>
@@ -10,7 +10,8 @@
       <tr>
         <td><%= call.origin.pais_coma_ciudad %></td>
         <td><%= call.destination.pais_coma_ciudad %></td>
-        <td><%= link_to 'Show', call_path(call) %></td>
+        <td><%= link_to 'Show', call_path(call), class: 'btn btn-primary' %></td>
       </tr>
   <% end %>
+
 </table>
