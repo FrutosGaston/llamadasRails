@@ -1,0 +1,12 @@
+<% BillFolder.all_bills.each do |bill| %>
+  <tr>
+    <td><%= bill.since %></td>
+    <td><%= bill.till %></td>
+    <td><%= bill.total_amount %></td>
+    <td><%= bill.calls %></td>
+    <td><%= link_to 'Detalles', calls_path %></td>
+    <td><%= link_to 'Borrar factura', bill_path(bill),
+                    method: :delete,
+                    data: { confirm: 'Estas seguro?' } %></td>
+  </tr>
+<% end %>

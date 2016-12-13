@@ -3,12 +3,12 @@
 
     <p>
       <%= f.label :origin %><br>
-      <%= f.collection_select(:origin_id, Location.all, :id, :pais_coma_ciudad) %><br>
+      <%= f.collection_select(:origin_id, LocationExpert.all_possible_locations, :id, :pais_coma_ciudad) %><br>
     </p>
 
     <p>
       <%= f.label :destination %><br>
-      <%= f.collection_select(:destination_id, Location.all, :id, :pais_coma_ciudad) %><br>
+      <%= f.collection_select(:destination_id, LocationExpert.all_possible_locations, :id, :pais_coma_ciudad) %><br>
     </p>
 
     <p>

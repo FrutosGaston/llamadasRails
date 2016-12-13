@@ -2,27 +2,16 @@ class Biller
 
   attr_accessor :bills
 
-  extend ActiveModel::Naming
-  include ActiveModel::Conversion
-
-  def persisted?
-    false
-  end
-
   def initialize(cost_types)
     @cost_types = cost_types
   end
 
-  def total_amount(llamadas)
-    llamadas.reduce(0) { |acumulador, llamada| acumulador += call_amount(llamada) }
+  def total_amount(calls)
+    calls.reduce(0) { |acumulador, call| acumulador += call_amount(call) }
   end
 
   def call_amount(llamada)
     call_type(llamada).costo_total(llamada)
-  end
-
-  def bills
-    Bill.all
   end
 
   private

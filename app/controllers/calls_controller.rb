@@ -3,21 +3,22 @@ class CallsController < ApplicationController
   end
 
   def index
-    @calls = Call.all
+    @calls = CallsRecord.all
   end
 
   def show
-    @call = Call.find(params[:id])
+    @call = CallsRecord.find(params[:id])
   end
 
   def create
     @call = Call.new(args)
 
-    @call.save
+    CallsRecord.add_call(@call)
     redirect_to @call
   end
 
   private
+
   def args
     params.require(:call).permit(:origin_id, :destination_id, :when_was, :last)
   end

@@ -1,0 +1,15 @@
+<%= form_for :bill, url: {action: 'create'} do |f| %>
+    <p>
+      <%= f.label :since, 'Desde' %><br>
+      <%= f.datetime_select :since %>
+    </p>
+
+    <p>
+      <%= f.label :until, 'Hasta' %><br>
+      <%= f.datetime_select :till %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

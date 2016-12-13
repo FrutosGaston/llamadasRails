@@ -1,7 +1,7 @@
 class Bill < ApplicationRecord
 
   def calls
-    Call.where(when_was: since..till)
+    CallsRecord.between(since, till)
   end
 
   def total_amount

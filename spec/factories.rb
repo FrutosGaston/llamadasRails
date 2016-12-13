@@ -6,3 +6,12 @@ FactoryGirl.define do
     when_was DateTime.new(2016,11,30,11,1,1,'+0')
   end
 end
+
+FactoryGirl.define do
+  factory :location, class: Location do
+    pais 'US'
+    ciudad 'Miami'
+  end
+end
+
+

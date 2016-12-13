@@ -3,17 +3,17 @@ class LocationsController < ApplicationController
   end
 
   def index
-    @locations = Location.all
+    @locations = LocationExpert.all_possible_locations
   end
 
   def show
-    @location = Location.find(params[:id])
+    @location = LocationExpert.find_location_by_id(params[:id])
   end
 
   def create
     @location = Location.new(args)
 
-    @location.save
+    LocationExpert.add_location(@location)
     redirect_to @location
   end
 
@@ -22,4 +22,3 @@ class LocationsController < ApplicationController
   end
 
 end
-
