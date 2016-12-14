@@ -1,4 +1,5 @@
-<h1>Llamadas</h1>
+<br>
+<h1><span class="label label-danger">Llamadas</span></h1>
 
 <table class="table">
   <tr>
@@ -8,9 +9,9 @@
 
   <% @calls.each do |call| %>
       <tr>
-        <td><%= call.origin.pais_coma_ciudad %></td>
-        <td><%= call.destination.pais_coma_ciudad %></td>
-        <td><%= link_to 'Show', call_path(call), class: 'btn btn-primary' %></td>
+        <td><i class="fa fa-map-marker"><%= call.origin.pais_coma_ciudad %></td>
+        <td><i class="fa fa-map-marker"><%= call.destination.pais_coma_ciudad %></td>
+          <td><i class="fa fa-search fa-fw"></i> <%= link_to 'Show', call_path(call), class: 'btn btn-primary' %></td>
       </tr>
   <% end %>
 

@@ -3,10 +3,10 @@
     <td><%= bill.since %></td>
     <td><%= bill.till %></td>
     <td><%= bill.total_amount %></td>
-    <td><%= bill.calls %></td>
-    <td><%= link_to 'Detalles', calls_path %></td>
-    <td><%= link_to 'Borrar factura', bill_path(bill),
+    <td><i class="fa fa-search fa-fw"></i> <%= link_to 'Detalles', calls_path, class: 'btn btn-primary' %></td>
+    <td><i class="fa fa-trash fa-fw"></i> <%= link_to 'Borrar', bill_path(bill),
                     method: :delete,
-                    data: { confirm: 'Estas seguro?' } %></td>
+                    data: { confirm: 'Estas seguro?' },
+                    class: 'btn btn-danger' %></td>
   </tr>
 <% end %>

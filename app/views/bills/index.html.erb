@@ -1,13 +1,19 @@
-<h1>Pedir factura</h1>
-<%= render 'bills/ask_for_bill' %>
+<br>
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <h1>Pedir factura</h1>
+    <%= render 'bills/ask_for_bill' %>
+  </div>
+</div>
 
-
-<h2>Facturas</h2>
-<table>
+<br><br>
+<h3><span class="label label-primary"> Facturas</span></h3>
+<table class='table'>
   <tr>
-    <th>Desde</th>
-    <th>Hasta</th>
-    <th>Monto</th>
-    <th>Llamadas</th>
+    <th><i class="fa fa-calendar fa-fw"></i><span> Desde </span></th>
+    <th><i class="fa fa-calendar fa-fw"></i><span> Hasta </span></th>
+    <th><i class="fa fa-bank fa-fw"></i><span> Monto </span></th>
   </tr>
+
 <%= render 'bills/print_bills' %>
+</table>
