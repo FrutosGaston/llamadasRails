@@ -9,7 +9,7 @@
 
   <% @locations.each do |location| %>
       <tr>
-        <td><%= location.pais %></td>
+        <td><%= location.country.name %></td>
         <td><%= location.ciudad %></td>
         <td><i class="fa fa-search fa-fw"></i><%= link_to 'Show', location_path(location), class: 'btn btn-primary' %></td>
       </tr>

@@ -13,20 +13,7 @@
 <div id="main-container" class="container">
   <div class="row">
       <div id="sidebar" class="col-xs-3">
-        <div class="site-wrapper-inner">
-          <div class="masthead clearfix">
-            <div class="inner">
-              <!--navigation-->
-              <div class="navbar navbar-inverse navbar-fixed-left">
-                <ul class="nav navbar-nav">
-                  <li><a href="bills"><i class="fa fa-credit-card fa-5x fa-fw"></i><span> Facturas </span></a></li>
-                  <li><a href="calls"><i class="fa fa-phone fa-5x fa-fw"></i><span> Llamadas </span></a></li>
-                  <li><a href="locations"><i class="fa fa-map-marker fa-5x fa-fw"></i><span> Ubicaciones </span></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <%= render 'layouts/side_navbar' %>
       </div>
       <div id="sidebar" class="col-xs-9">
           <%= yield %>
