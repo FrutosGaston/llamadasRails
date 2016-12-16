@@ -22,10 +22,8 @@
 
 /* CSS used here will be applied after bootstrap.css */
 .navbar-fixed-left {
-  width: 140px;
   height: 100%;
   float: left;
-  background: red;
   border: 2px solid #000000;
   border-radius: 25px;
   background-image: url("http://all4desktop.com/data_images/original/4238112-background.jpg");
@@ -50,4 +48,24 @@
 
 .wrapper {
   margin-left: 0px;
+}
+
+.panel-show {
+  background-image: url("http://wallpapercave.com/wp/4Hslo1Z.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-size: 200%;
+  font-family: "Times New Roman", Georgia, Serif;
+  border-radius: 25px;
+  border: 2px solid #000000;
+}
+
+#top-link-block.affix-top {
+  position: absolute; /* allows it to "slide" up into view */
+  bottom: -82px;
+  left: 10px;
+}
+#top-link-block.affix {
+  bottom: 18px;
+  left: 10px;
 }

@@ -1,20 +1,26 @@
-<p>
-  <strong>Origen:</strong>
-  <%= @call.origin.pais_coma_ciudad %>
-  <%= @call.origin.country.subregion %>
-</p>
+<br>
+<div class="panel panel-primary">
+  <div class="panel-body panel-show">
+    <p>
+      <strong>Origen:</strong>
+      <%= @call.origin.pais_coma_ciudad %>
+      <%= @call.origin.country.subregion %>
+    </p>
 
-<p>
-  <strong>Destino:</strong>
-  <%= @call.destination.pais_coma_ciudad %>
-</p>
+    <p>
+      <strong>Destino:</strong>
+      <%= @call.destination.pais_coma_ciudad %>
+    </p>
 
-<p>
-  <strong>Se realizo:</strong>
-  <%= @call.when_was %>
-</p>
+    <p>
+      <strong>Se realizo:</strong>
+      <%= @call.when_was %>
+    </p>
 
-<p>
-  <strong>Duro:</strong>
-  <%= @call.last %>
-</p>
+    <p>
+      <strong>Duro:</strong>
+      <%= @call.last %>
+    </p>
+
+  </div>
+</div>
